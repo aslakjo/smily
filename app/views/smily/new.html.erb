@@ -1,0 +1,8 @@
+
+<% form_for :smily, @smily do |s| %>
+<% Smily.humor.each do |h| %>
+  <%= label :smily, :mood, h %>
+  <%= radio_button :smily, :mood, h %>
+<%end%>
+
+<%end%>
