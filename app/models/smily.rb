@@ -7,4 +7,20 @@ class Smily < ActiveRecord::Base
   def value
     Smily.humor[mood]
   end
+
+  def self.snitt
+    teller = 0
+    Smily.find(:all).each{|smiley|
+      teller = teller + smiley.value
+    }
+    teller = teller/Smily.count(:all)
+  end
+
+  def self.translate_mood(mood_id)
+    humor.each do |key,value|
+      if value == mood_id
+        return key
+      end
+    end
+  end
 end
