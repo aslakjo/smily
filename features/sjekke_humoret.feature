@@ -8,5 +8,16 @@ Feature: Få større fokus på hvordan andre oppfater en
     
   Scenario: Registere humør
     Gitt at jeg er på startsiden
+    Og at jeg er den første idag
     Når jeg trykker på "glad"
-    Så skal jeg blir registrert "glad"
+    Så skal jeg se ett smilefjes av typen glad
+
+  Scenario: Se gjennomsnitts humør
+    Gitt at jeg er på startsiden
+    Og andre har svart:
+        | mood      |
+        | glad      |
+        | middels   |
+    Når jeg trykker på "sur"
+    Så skal jeg se ett smilefjes av typen middels
+

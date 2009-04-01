@@ -12,6 +12,7 @@
 ActiveRecord::Schema.define(:version => 20090129153416) do
 
   create_table "smilies", :force => true do |t|
+    t.string   "mood"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
