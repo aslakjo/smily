@@ -1,0 +1,9 @@
+
+<% form_for :smily, :url => {:action => :create} do |s| %>
+  <% Smily.humor.keys.each do |h| %>
+    <%= s.label h %>
+    <%= radio_button :smily, :mood, h %>
+
+  <%end%>
+  <%= s.submit  %>
+<%end%>
